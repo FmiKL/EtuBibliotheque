@@ -44,6 +44,7 @@ The app runs at `http://localhost:4200`.
 |--------------|----------------------------------|
 | Home (empty) | `http://localhost:4200`          |
 | Register     | `http://localhost:4200/register` |
+| Login        | `http://localhost:4200/login`    |
 
 ## Links
 
