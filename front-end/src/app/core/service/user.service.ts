@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Register } from '../models/Register';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Login } from '../models/Login';
 
 @Injectable({
@@ -17,6 +17,20 @@ export class UserService {
   login(credentials: Login): Observable<string> {
     return this.httpClient.post('/api/login', credentials, {
       responseType: 'text'
-    });
+    }).pipe(
+      tap(token => localStorage.setItem('token', token))
+    );
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
+  isAuthenticated(): boolean {
+    return this.getToken() !== null;
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
   }
 }

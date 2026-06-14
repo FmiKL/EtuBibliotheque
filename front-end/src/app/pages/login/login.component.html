@@ -57,12 +57,10 @@
       </div>
     }
 
-    @if (token) {
+    @if (successMessage) {
       <div class="alert alert-success mt-3">
-        Authentication successful
+        {{ successMessage }}
       </div>
-      <p class="mt-2"><strong>Token:</strong></p>
-      <textarea class="form-control" readonly>{{ token }}</textarea>
     }
   </div>
 </div>

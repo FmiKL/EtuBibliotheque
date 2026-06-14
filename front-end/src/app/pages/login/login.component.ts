@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   loading = false;
   errorMessage = '';
-  token = '';
+  successMessage = '';
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     this.submitted = true;
     this.errorMessage = '';
-    this.token = '';
+    this.successMessage = '';
 
     if (this.loginForm.invalid) {
       return;
@@ -53,8 +53,8 @@ export class LoginComponent implements OnInit {
     this.userService.login(credentials)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
-        next: token => {
-          this.token = token;
+        next: () => {
+          this.successMessage = 'Authentication successful';
           this.loading = false;
         },
         error: error => {
@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
   onReset(): void {
     this.submitted = false;
     this.errorMessage = '';
-    this.token = '';
+    this.successMessage = '';
     this.loginForm.reset();
   }
 }
