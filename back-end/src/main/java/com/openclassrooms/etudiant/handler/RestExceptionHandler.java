@@ -43,6 +43,21 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
                 new HttpHeaders(), HttpStatus.FORBIDDEN, request);
     }
 
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(value = {StudentNotFoundException.class})
+    protected ResponseEntity<Object> handleStudentNotFoundException(
+        StudentNotFoundException studentNotFoundException,
+        WebRequest request
+    ) {
+        logError(studentNotFoundException);
+        return handleExceptionInternal(
+            studentNotFoundException,
+            getErrorDetails(studentNotFoundException, request),
+            new HttpHeaders(),
+            HttpStatus.NOT_FOUND,
+            request
+        );
+    }
 
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(value = {Exception.class})
