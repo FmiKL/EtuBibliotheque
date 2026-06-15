@@ -18,6 +18,12 @@
       </div>
     }
 
+    @if (successMessage) {
+      <div class="alert alert-success">
+        {{ successMessage }}
+      </div>
+    }
+
     @if (!loading && !errorMessage) {
       @if (students.length === 0) {
         <p>No students found</p>
@@ -53,6 +59,14 @@
                   >
                     Edit
                   </a>
+                  <button
+                    class="btn btn-danger ml-1"
+                    type="button"
+                    [disabled]="deletingStudentId === student.id"
+                    (click)="deleteStudent(student)"
+                  >
+                    {{ deletingStudentId === student.id ? 'Deleting...' : 'Delete' }}
+                  </button>
                 </td>
               </tr>
             }

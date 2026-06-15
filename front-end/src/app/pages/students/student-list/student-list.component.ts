@@ -17,6 +17,8 @@ export class StudentListComponent implements OnInit {
   students: Student[] = [];
   loading = false;
   errorMessage = '';
+  deletingStudentId?: number;
+  successMessage = '';
 
   ngOnInit(): void {
     this.loading = true;
@@ -31,6 +33,31 @@ export class StudentListComponent implements OnInit {
         error: error => {
           this.errorMessage = error.error?.message || 'Unable to load students';
           this.loading = false;
+        }
+      });
+  }
+
+  deleteStudent(student: Student): void {
+    if (!student.id || !confirm(`Delete ${student.firstName} ${student.lastName}?`)) {
+      return;
+    }
+
+    this.errorMessage = '';
+    this.successMessage = '';
+    this.deletingStudentId = student.id;
+
+    this.studentService.delete(student.id)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: () => {
+          this.students = this.students.filter(currentStudent => currentStudent.id !== student.id);
+          this.successMessage = 'Student deleted successfully';
+          this.deletingStudentId = undefined;
+        },
+        error: error => {
+          this.errorMessage =
+            error.error?.message || 'Unable to delete student';
+          this.deletingStudentId = undefined;
         }
       });
   }
