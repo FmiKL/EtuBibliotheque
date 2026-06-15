@@ -46,6 +46,7 @@ The app runs at `http://localhost:4200`.
 | Register       | `http://localhost:4200/register`     | Public        |
 | Login          | `http://localhost:4200/login`        | Public        |
 | Students       | `http://localhost:4200/students`     | Authenticated |
+| Create student | `http://localhost:4200/students/new` | Authenticated |
 | Student detail | `http://localhost:4200/students/:id` | Authenticated |
 
 ## Links
