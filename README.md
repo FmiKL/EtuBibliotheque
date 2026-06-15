@@ -40,12 +40,13 @@ npm start
 
 The app runs at `http://localhost:4200`.
 
-| Page         | URL                              | Access          |
-|--------------|----------------------------------|-----------------|
-| Home (empty) | `http://localhost:4200`          | Public          |
-| Register     | `http://localhost:4200/register` | Public          |
-| Login        | `http://localhost:4200/login`    | Public          |
-| Students     | `http://localhost:4200/students` | Authenticated   |
+| Page           | URL                                  | Access        |
+|----------------|--------------------------------------|---------------|
+| Home (empty)   | `http://localhost:4200`              | Public        |
+| Register       | `http://localhost:4200/register`     | Public        |
+| Login          | `http://localhost:4200/login`        | Public        |
+| Students       | `http://localhost:4200/students`     | Authenticated |
+| Student detail | `http://localhost:4200/students/:id` | Authenticated |
 
 ## Links
 

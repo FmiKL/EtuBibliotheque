@@ -25,6 +25,7 @@
               <th>First name</th>
               <th>Last name</th>
               <th>Email</th>
+              <th>Actions</th>
             </tr>
           </thead>
 
@@ -35,6 +36,14 @@
                 <td>{{ student.firstName }}</td>
                 <td>{{ student.lastName }}</td>
                 <td>{{ student.email }}</td>
+                <td>
+                  <a
+                    class="btn btn-primary"
+                    [routerLink]="['/students', student.id]"
+                  >
+                    View
+                  </a>
+                </td>
               </tr>
             }
           </tbody>

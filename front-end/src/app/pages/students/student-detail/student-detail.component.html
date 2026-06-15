@@ -1,0 +1,24 @@
+<div class="card m-3">
+  <h5 class="card-header">Student detail</h5>
+
+  <div class="card-body">
+    @if (loading) {
+      <div class="alert alert-info">
+        Loading...
+      </div>
+    }
+
+    @if (errorMessage) {
+      <div class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+    }
+
+    @if (student) {
+      <p><strong>Id:</strong> {{ student.id }}</p>
+      <p><strong>First name:</strong> {{ student.firstName }}</p>
+      <p><strong>Last name:</strong> {{ student.lastName }}</p>
+      <p><strong>Email:</strong> {{ student.email }}</p>
+    }
+  </div>
+</div>

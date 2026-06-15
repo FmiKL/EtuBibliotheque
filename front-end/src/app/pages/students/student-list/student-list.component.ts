@@ -2,10 +2,11 @@ import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Student } from '../../../core/models/Student';
 import { StudentService } from '../../../core/service/student.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-student-list',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './student-list.component.html',
   styleUrl: './student-list.component.css'
 })
