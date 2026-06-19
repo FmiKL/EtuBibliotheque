@@ -50,6 +50,27 @@ The app runs at `http://localhost:4200`.
 | Student detail | `http://localhost:4200/students/:id`      | Authenticated |
 | Edit student   | `http://localhost:4200/students/:id/edit` | Authenticated |
 
+### API
+
+| Method   | URL                 | Access        |
+|----------|---------------------|---------------|
+| `POST`   | `/api/register`     | Public        |
+| `POST`   | `/api/login`        | Public        |
+| `GET`    | `/api/students`     | Authenticated |
+| `POST`   | `/api/students`     | Authenticated |
+| `GET`    | `/api/students/:id` | Authenticated |
+| `PUT`    | `/api/students/:id` | Authenticated |
+| `DELETE` | `/api/students/:id` | Authenticated |
+
+## Tests
+
+```bash
+cd back-end
+./mvnw verify
+```
+
+JaCoCo report: `back-end/target/site/jacoco/index.html`.
+
 ## Links
 
 - [Back-end README](back-end/README.md)
