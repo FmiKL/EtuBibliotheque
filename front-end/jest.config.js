@@ -6,4 +6,9 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
   collectCoverage: true,
   coverageReporters: ['html'],
+  coverageThreshold: {
+    global: {
+      lines: 80
+    }
+  }
 };
