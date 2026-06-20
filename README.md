@@ -64,12 +64,23 @@ The app runs at `http://localhost:4200`.
 
 ## Tests
 
+### Back-end
+
 ```bash
 cd back-end
 ./mvnw verify
 ```
 
 JaCoCo report: `back-end/target/site/jacoco/index.html`.
+
+### Front-end
+
+```bash
+cd front-end
+npm test -- --runInBand
+```
+
+Jest report: `front-end/coverage/index.html`.
 
 ## Links
 
