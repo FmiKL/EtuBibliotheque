@@ -82,6 +82,19 @@ npm test -- --runInBand
 
 Jest report: `front-end/coverage/index.html`.
 
+### E2E
+
+```bash
+cd front-end
+npx ng run etudiant-frontend:serve-e2e
+```
+
+```bash
+npx cypress run
+```
+
+Cypress report: `front-end/cypress-coverage/lcov-report/index.html`.
+
 ## Links
 
 - [Back-end README](back-end/README.md)
