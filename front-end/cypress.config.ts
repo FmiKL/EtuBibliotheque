@@ -4,8 +4,12 @@ export default defineConfig({
   allowCypressEnv: false,
 
   e2e: {
+    baseUrl: "http://localhost:4200",
+
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      require('@cypress/code-coverage/task')(on, config);
+
+      return config;
     },
   },
 });
