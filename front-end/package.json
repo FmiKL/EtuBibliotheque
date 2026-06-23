@@ -7,7 +7,11 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:coverage": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "start:e2e": "ng run etudiant-frontend:serve-e2e",
+    "test:e2e": "cypress run",
+    "test:e2e:coverage": "nyc report --check-coverage --lines 80 --report-dir cypress-coverage"
   },
   "private": true,
   "dependencies": {

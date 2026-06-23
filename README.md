@@ -66,34 +66,51 @@ The app runs at `http://localhost:4200`.
 
 ### Back-end
 
+Run tests and coverage check:
+
 ```bash
 cd back-end
 ./mvnw verify
 ```
 
 JaCoCo report: `back-end/target/site/jacoco/index.html`.
+Coverage screenshots: [report](docs/coverage/backend-jacoco-report.png), [check](docs/coverage/backend-coverage-check.png).
 
 ### Front-end
 
+Run tests and coverage check:
+
 ```bash
 cd front-end
-npm test -- --runInBand
+npm run test:coverage
 ```
 
 Jest report: `front-end/coverage/index.html`.
+Coverage screenshots: [report](docs/coverage/frontend-jest-report.png), [check](docs/coverage/frontend-coverage-check.png).
 
 ### E2E
 
-```bash
-cd front-end
-npx ng run etudiant-frontend:serve-e2e
-```
+Start the instrumented front-end:
 
 ```bash
-npx cypress run
+cd front-end
+npm run start:e2e
+```
+
+Run tests:
+
+```bash
+npm run test:e2e
+```
+
+Check coverage:
+
+```bash
+npm run test:e2e:coverage
 ```
 
 Cypress report: `front-end/cypress-coverage/lcov-report/index.html`.
+Coverage screenshots: [report](docs/coverage/e2e-cypress-report.png), [check](docs/coverage/e2e-coverage-check.png).
 
 ## Links
 
