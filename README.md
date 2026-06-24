@@ -114,5 +114,6 @@ Coverage screenshots: [report](docs/coverage/e2e-cypress-report.png), [check](do
 
 ## Links
 
+- [Test plan](docs/plan-tests.md)
 - [Back-end README](back-end/README.md)
 - [Front-end README](front-end/README.md)
